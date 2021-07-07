@@ -423,7 +423,7 @@ body.ie ._ibg img {
   left: 0;
   width: 0;
   height: 100%;
-  background-color: #48F86F;
+  background-color: #FF3300;
   -webkit-animation: active-answer 0.3s ease-out forwards;
           animation: active-answer 0.3s ease-out forwards;
 }
@@ -538,6 +538,37 @@ body.ie ._ibg img {
   height: 0;
   opacity: 0;
   visibility: hidden;
+}
+
+.welcome-quiz {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.welcome-quiz__title {
+  padding: 0 10px;
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 150px;
+}
+
+.welcome-quiz__button {
+  width: 200px;
+  height: 50px;
+  background-color: #fff;
+  font-size: 22px;
+  border-radius: 10px;
 }
 
 @-webkit-keyframes active-answer {

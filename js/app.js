@@ -60,6 +60,7 @@ let answer =document.querySelectorAll('.input');
 let succesText = document.querySelector('.quiz__message_succes');
 let wrongText = document.querySelector('.quiz__message_wrong');
 let quizMessage = document.querySelector('.quiz__message');
+let welcomeBtn = document.querySelector('.welcome-quiz__btn');
 let score = 0;
 
 for (let index = 0; index < answer.length; index++) {
@@ -73,23 +74,21 @@ for (let index = 0; index < answer.length; index++) {
 
 	label.classList.add('_active');
 	quizMessage.classList.add('_active');
-
+	quizMessage.innerHTML= `Супер, молодец!`;
     if (correctAnswer == answerValue) {
 
-		quizMessage.innerHTML= `Верно!`;
+		
     	console.log('Correct answer');
     	score++;
     	console.log(score);
-    } else {
-		quizMessage.innerHTML= `Ты был близко!`;
-
-    	console.log('Wrong answer');
     }
 	setTimeout(goToNextQuestion, 800);
 	
   });
-  
 }
+welcomeBtn.addEventListener("click", function(e) {
+	sliderQuiz.slideNext();
+});
 function goToNextQuestion() {
 	sliderQuiz.slideNext();
 	quizMessage.classList.remove('_active');
