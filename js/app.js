@@ -77,10 +77,7 @@ for (let index = 0; index < answer.length; index++) {
 	quizMessage.innerHTML= `Супер, молодец!`;
     if (correctAnswer == answerValue) {
 
-		
-    	console.log('Correct answer');
     	score++;
-    	console.log(score);
     }
 	setTimeout(goToNextQuestion, 800);
 	
