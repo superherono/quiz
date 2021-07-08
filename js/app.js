@@ -61,6 +61,7 @@ let succesText = document.querySelector('.quiz__message_succes');
 let wrongText = document.querySelector('.quiz__message_wrong');
 let quizMessage = document.querySelector('.quiz__message');
 let welcomeBtn = document.querySelector('.welcome-quiz__btn');
+let quizLabels =document.querySelectorAll('.quiz__label');
 let score = 0;
 
 for (let index = 0; index < answer.length; index++) {
@@ -73,23 +74,32 @@ for (let index = 0; index < answer.length; index++) {
     let correctAnswer = parenttAnswer.getAttribute('data-correct');
 
 	label.classList.add('_active');
+	
 	quizMessage.classList.add('_active');
 	quizMessage.innerHTML= `Супер, молодец!`;
+	quizLabels.forEach(quizLabel => {
+		quizLabel.classList.add('_untouch');
+	});
     if (correctAnswer == answerValue) {
-
     	score++;
     }
+	setTimeout(removeClass, 1000);
 	setTimeout(goToNextQuestion, 800);
-	
   });
 }
 welcomeBtn.addEventListener("click", function(e) {
 	sliderQuiz.slideNext();
 });
+function removeClass() {
+	quizLabels.forEach(element => {
+		element.classList.remove('_untouch');
+	});
+}
 function goToNextQuestion() {
 	sliderQuiz.slideNext();
 	quizMessage.classList.remove('_active');
 }
+
 
 sliderQuiz.on('reachEnd', function () {
 	

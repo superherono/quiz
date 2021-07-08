@@ -399,6 +399,10 @@ body.ie ._ibg img {
   background-color: #fff;
 }
 
+.quiz__label._untouch {
+  pointer-events: none;
+}
+
 .quiz__label:last-child {
   border-radius: 0px 0px 10px 10px;
 }
@@ -534,7 +538,11 @@ body.ie ._ibg img {
 }
 
 .results-quiz__more_final {
+  margin-top: -200px;
+  font-size: 36px;
+  color: #fff;
   display: none;
+  text-align: center;
 }
 
 .results-quiz__more_final._active {
