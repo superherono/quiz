@@ -92,16 +92,26 @@ function goToNextQuestion() {
 }
 
 sliderQuiz.on('reachEnd', function () {
-	let pageTitle = document.querySelector('.page__title');
+	
 	let quizQuestionsLenght = document.querySelectorAll('.quiz__question').length;
 	let quizTotal = document.querySelector('.results-quiz__total');
 	let quizScore = document.querySelector('.results-quiz__score');
-	let finalPageTitle = document.querySelector('.page__title_last');
+	let congratsPageTitle = document.querySelector('.page__title_last');
+	let repeatPageTitle = document.querySelector('.page__title_repeat');
 	let quizResults = document.querySelector('.quiz__results');
+	let quizResultsTextRepeat = document.querySelector('.results-quiz__more_repeat');
+	let quizResultsTextFinal = document.querySelector('.results-quiz__more_final');
 
-	finalPageTitle.classList.add('_show');
+	
 	quizResults.classList.add('_show');
-
 	quizTotal.innerHTML = `${quizQuestionsLenght}`;
 	quizScore.innerHTML = `${score}`;
+
+	if (score == quizQuestionsLenght) {
+		congratsPageTitle.classList.add('_show');
+		quizResultsTextFinal.classList.add('_active');
+	} else {
+		repeatPageTitle.classList.add('_show');
+		quizResultsTextRepeat.classList.add('_active');
+	}
 });

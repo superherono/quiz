@@ -299,9 +299,6 @@ body.ie ._ibg img {
   line-height: 100%;
   text-align: center;
   color: #fff;
-}
-
-.page__title_last {
   position: absolute;
   width: 0;
   height: 0;
@@ -317,7 +314,7 @@ body.ie ._ibg img {
           transform: translate(0px, -800px);
 }
 
-.page__title_last._show {
+.page__title._show {
   width: auto;
   height: auto;
   opacity: 1;
@@ -524,6 +521,26 @@ body.ie ._ibg img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.results-quiz__more_repeat {
+  display: none;
+}
+
+.results-quiz__more_repeat._active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.results-quiz__more_final {
+  display: none;
+}
+
+.results-quiz__more_final._active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .results-quiz__link {
